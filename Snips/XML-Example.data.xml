@@ -1,0 +1,55 @@
+<rss version="2.0">
+	<channel>
+		<title>diecknet</title>
+		<link>https://diecknet.de/de/</link>
+		<description>Recent content on diecknet</description>
+		<generator>Hugo -- gohugo.io</generator>
+		<language>de</language>
+		<lastBuildDate>Tue, 28 Nov 2023 00:00:00 +0000</lastBuildDate>
+		<item>
+			<title>Die unterschiedlichen Klammern in der PowerShell</title>
+			<link>
+                https://diecknet.de/de/2023/11/28/powershell-brackets/
+            </link>
+			<pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
+			<guid>
+                https://diecknet.de/de/2023/11/28/powershell-brackets/
+            </guid>
+			<description>
+                Wann ist welche Klammer die Richtige in der PowerShell? # Verschiedene Klammern in der PowerShell () {} [] Die Klammern haben unterschiedliche Einsatzzwecke. Die Größer-als &lt; und Kleiner-als &gt; Zeichen würde ich übrigens nicht zu den Klammern zählen. Für alle echten Klammern gilt: Wenn ihr eine Klammer geöffnet habt, müsst ihr sie auch wieder schließen. Runde Klammern ( ) Mit runden Klammern wird in der PowerShell ein Ausdruck bzw. ein Befehl umfasst, bzw.
+            </description>
+            <img src="https://diecknet.de/favicons/android-icon-192x192.png" alt="Beispiel Bild" />
+		</item>
+		<item>
+			<title>
+                PowerShell ConstrainedLanguage Mode per Gruppenrichtlinie einstellen
+            </title>
+			<link>
+                    https://diecknet.de/de/2023/05/20/powershell-constrainedlanguage-mode-per-gpo/
+            </link>
+			<pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
+			<guid>
+                https://diecknet.de/de/2023/05/20/powershell-constrainedlanguage-mode-per-gpo/
+            </guid>
+			<description>
+                PowerShell Language Modes sind eine Möglichkeit die Funktionalität der PowerShell einzuschränken, um die Sicherheit eines Systems zu erhöhen. Das ist natürlich nur ein kleiner Baustein in einer größeren Sicherheitsstrategie, also das alleine ist noch kein ausreichender Schutz für ein System. Gleichzeitig ist das auch ein zweischneidiges Schwert: Vorteil: Wir entziehen potenziellen Angreifern ein mächtiges Werkzeug. Nachteil: Wir selbst als Administratoren können die PowerShell an einem System auch nicht mehr richtig nutzen.
+            </description>
+            <img src="https://diecknet.de/favicons/favicon-256x256.png" alt="Beispiel Bild #2" />
+		</item>
+		<item>
+			<title>
+                Synchronisierte Exchange Objekte ohne Exchange Server verwalten
+            </title>
+			<link>
+                https://diecknet.de/de/2023/04/12/exchange-hybrid-without-ever-having-an-exchange-server/
+            </link>
+			<pubDate>Wed, 12 Apr 2023 00:00:00 +0000</pubDate>
+			<guid>
+                https://diecknet.de/de/2023/04/12/exchange-hybrid-without-ever-having-an-exchange-server/
+            </guid>
+			<description>
+                Es ist ja schon seit einiger Zeit möglich, die Exchange Server Verwaltungstools ohne einen vollständigen Exchange Server zu verwenden. Die meisten Anleitungen gehen davon aus, dass schon mindestens ein Exchange Server vorhanden war und dieser dann entfernt wird. Und die Microsoft Dokumentation verweist nur am Rande auf das Thema und erklärt nicht wirklich. In diesem Post gehe ich auf ein Szenario ein, was vorallem viele kleinere Unternehmen betrifft: Im Microsoft 365 Admin Center wird angezeigt:
+            </description>
+		</item>
+	</channel>
+</rss>
