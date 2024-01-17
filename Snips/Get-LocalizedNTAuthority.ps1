@@ -2,6 +2,9 @@
 # for example on German System it would return "NT-AUTORITÄT\SYSTEM"	
 ([System.Security.Principal.SecurityIdentifier]::new("S-1-5-18")).Translate([System.Security.Principal.NTAccount]).Value
 
+# For more Security principals check this Microsoft article:
+# https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers
+
 # Get the localized name of "NT AUTHORITY\SELF" for the current user's language
 # for example on German System it would return "NT-AUTHORITÄT\SELBST"
 ([System.Security.Principal.SecurityIdentifier]::new("S-1-5-10")).Translate([System.Security.Principal.NTAccount]).Value
@@ -56,3 +59,6 @@
 
 # NT AUTHORITY\ENTERPRISE READ-ONLY DOMAIN CONTROLLERS BETA
 ([System.Security.Principal.SecurityIdentifier]::new("S-1-5-22")).Translate([System.Security.Principal.NTAccount]).Value
+
+# BUILTIN\ADMINISTRATORS
+([System.Security.Principal.SecurityIdentifier]::new("S-1-5-32-544")).Translate([System.Security.Principal.NTAccount]).Value
