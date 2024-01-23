@@ -14,4 +14,4 @@ This repository contains some PowerShell scripts that I created.
 
 ## License
 
-The code in the repository is licensed under the [MIT license](LICENSE.md), if applicable.
+The code in the repository is licensed under the [MIT license](LICENSE.md), if applicable or not stated otherwise.
