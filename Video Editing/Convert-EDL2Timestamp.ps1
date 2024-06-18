@@ -4,7 +4,7 @@ Converts an Edit Decision List (EDL) file to timestamps and titles.
 
 .DESCRIPTION
 This script reads an EDL file specified by the user and extracts timestamps and titles from it. 
-I created this to create chapters by adding the timestamps a YouTube video description.
+I created this to create chapters by adding the timestamps to a YouTube video description.
 
 .PARAMETER Path
 The path to the EDL file that should be processed. This parameter is mandatory.
