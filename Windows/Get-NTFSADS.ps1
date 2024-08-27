@@ -44,6 +44,10 @@ param(
     [switch]$ShowElementsWithDataStreamToo
 )
 
+if(!(Test-Path $Path)) {
+    throw "Could not access the path '$Path'. Please check the path and try again."
+}
+
 $Data = Get-ChildItem $Path -Recurse:$Recurse
 foreach($Element in $Data) {
 
