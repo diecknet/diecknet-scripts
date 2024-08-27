@@ -1,0 +1,1 @@
+Get-LocalUser | Where-Object {$_.Sid -like "*-500" } | Enable-LocalUser
