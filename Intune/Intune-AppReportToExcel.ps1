@@ -10,10 +10,10 @@
     https://github.com/diecknet/diecknet-scripts/tree/main/Intune/Intune-AppReportToExcel.ps1
 
 .NOTES
-    Version:        1.0
+    Version:        1.0.1
     Author:         Andreas Dieckmann
-    Creation Date:  2024-09-09
-    Purpose/Change: Initial script development
+    Changed Date:   2024-09-11
+    Purpose/Change: Fix module dependencies
 
 .PARAMETER SkipAuth
     (Optional) Specifies whether to skip the authentication process.
@@ -46,8 +46,9 @@ param(
 )
 
 #Requires -Modules @{ ModuleName="ImportExcel"; ModuleVersion="7.8.9" }
-#Requires -Modules @{ ModuleName="Microsoft.Graph.Devices.CorporateManagement"; ModuleVersion="2.21.1" }
+#Requires -Modules @{ ModuleName="Microsoft.Graph.Beta.Devices.CorporateManagement"; ModuleVersion="2.21.1" }
 #Requires -Modules @{ ModuleName="Microsoft.Graph.Authentication"; ModuleVersion="2.21.1" }
+#Requires -Modules @{ ModuleName="Microsoft.Graph.Groups"; ModuleVersion="2.21.1" }
 
 #region functions
 function Get-GroupNameById {
@@ -174,8 +175,9 @@ try {
 
 #region setup
 Import-Module Microsoft.Graph.Authentication
-Import-Module Microsoft.Graph.Devices.CorporateManagement
+Import-Module Microsoft.Graph.Beta.Devices.CorporateManagement
 Import-Module ImportExcel
+Import-Module Microsoft.Graph.Groups
 
 if(!$SkipAuth) {
     Connect-MgGraph -Scopes "DeviceManagementApps.Read.All","Group.Read.All"
@@ -194,6 +196,7 @@ $AllAppAssignmentsByGroup = Get-AppsForGroups
 try {
     $AllAppAssignmentsByApp | Export-Excel -Path $FilePath -WorksheetName "Apps Overview"
     $AllAppAssignmentsByGroup | Export-Excel -Path $FilePath -WorksheetName "Apps per Group"
+    Write-Output "Exported data to $FilePath"
 } catch {
     Write-Error "Failed to export data to Excel"
     Write-Error $_.Exception.Message
