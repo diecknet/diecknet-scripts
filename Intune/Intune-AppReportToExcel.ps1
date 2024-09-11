@@ -10,10 +10,10 @@
     https://github.com/diecknet/diecknet-scripts/tree/main/Intune/Intune-AppReportToExcel.ps1
 
 .NOTES
-    Version:        1.0.1
+    Version:        1.1.0
     Author:         Andreas Dieckmann
     Changed Date:   2024-09-11
-    Purpose/Change: Fix module dependencies
+    Purpose/Change: Clear Sheet before exporting data to Excel
 
 .PARAMETER SkipAuth
     (Optional) Specifies whether to skip the authentication process.
@@ -194,8 +194,8 @@ $AllAppAssignmentsByGroup = Get-AppsForGroups
 
 #region export excel
 try {
-    $AllAppAssignmentsByApp | Export-Excel -Path $FilePath -WorksheetName "Apps Overview"
-    $AllAppAssignmentsByGroup | Export-Excel -Path $FilePath -WorksheetName "Apps per Group"
+    $AllAppAssignmentsByApp | Export-Excel -Path $FilePath -WorksheetName "Apps Overview" -ClearSheet
+    $AllAppAssignmentsByGroup | Export-Excel -Path $FilePath -WorksheetName "Apps per Group" -ClearSheet
     Write-Output "Exported data to $FilePath"
 } catch {
     Write-Error "Failed to export data to Excel"
