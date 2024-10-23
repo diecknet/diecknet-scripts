@@ -10,10 +10,10 @@
     https://github.com/diecknet/diecknet-scripts/tree/main/Intune/Intune-AppReportToExcel.ps1
 
 .NOTES
-    Version:        1.1.0
+    Version:        1.2.0
     Author:         Andreas Dieckmann
-    Changed Date:   2024-09-11
-    Purpose/Change: Clear Sheet before exporting data to Excel
+    Changed Date:   2024-10-23
+    Purpose/Change: Allow for deleted groups
 
 .PARAMETER SkipAuth
     (Optional) Specifies whether to skip the authentication process.
@@ -53,7 +53,11 @@ param(
 #region functions
 function Get-GroupNameById {
     param($GroupId)
-    Get-MgGroup -GroupId $GroupId | Select-Object -ExpandProperty DisplayName
+    try {
+        Get-MgGroup -GroupId $GroupId -ErrorAction Stop | Select-Object -ExpandProperty DisplayName
+    } catch {
+        "!Deleted Group (ID: $GroupId)"
+    }
 }
 
 function Get-Apps {
