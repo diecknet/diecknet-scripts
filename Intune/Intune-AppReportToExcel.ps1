@@ -10,10 +10,10 @@
     https://github.com/diecknet/diecknet-scripts/tree/main/Intune/Intune-AppReportToExcel.ps1
 
 .NOTES
-    Version:        1.2.0
+    Version:        1.3.0
     Author:         Andreas Dieckmann
-    Changed Date:   2024-10-23
-    Purpose/Change: Allow for deleted groups
+    Changed Date:   2024-12-04
+    Purpose/Change: Create tables in Excel for better sorting and filtering
 
 .PARAMETER SkipAuth
     (Optional) Specifies whether to skip the authentication process.
@@ -46,8 +46,8 @@ param(
 )
 
 #Requires -Modules @{ ModuleName="ImportExcel"; ModuleVersion="7.8.9" }
-#Requires -Modules @{ ModuleName="Microsoft.Graph.Beta.Devices.CorporateManagement"; ModuleVersion="2.21.1" }
 #Requires -Modules @{ ModuleName="Microsoft.Graph.Authentication"; ModuleVersion="2.21.1" }
+#Requires -Modules @{ ModuleName="Microsoft.Graph.Beta.Devices.CorporateManagement"; ModuleVersion="2.21.1" }
 #Requires -Modules @{ ModuleName="Microsoft.Graph.Groups"; ModuleVersion="2.21.1" }
 
 #region functions
@@ -198,8 +198,8 @@ $AllAppAssignmentsByGroup = Get-AppsForGroups
 
 #region export excel
 try {
-    $AllAppAssignmentsByApp | Export-Excel -Path $FilePath -WorksheetName "Apps Overview" -ClearSheet
-    $AllAppAssignmentsByGroup | Export-Excel -Path $FilePath -WorksheetName "Apps per Group" -ClearSheet
+    $AllAppAssignmentsByApp | Export-Excel -Path $FilePath -WorksheetName "Apps Overview" -ClearSheet -TableName "Apps_Overview" -TableStyle "Medium15" -AutoSize -AutoFilter
+    $AllAppAssignmentsByGroup | Export-Excel -Path $FilePath -WorksheetName "Apps per Group" -ClearSheet -TableName "Apps_per_Group" -TableStyle "Medium15" -AutoSize -AutoFilter
     Write-Output "Exported data to $FilePath"
 } catch {
     Write-Error "Failed to export data to Excel"
