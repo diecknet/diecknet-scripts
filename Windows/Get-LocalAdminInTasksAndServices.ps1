@@ -23,7 +23,7 @@ $BuiltinAdminDotName = ".\$($BuiltInAdminName)"
 #endregion
 
 #region Check Services
-$services = Get-WmiObject -Class Win32_Service
+$services = Get-CimInstance -ClassName Win32_Service
 
 foreach ($service in $services) {
     if($service.StartName -eq $BuiltinAdminDotName) {
