@@ -1,0 +1,1 @@
+New-Item C:\temp\example.txt -ItemType File -Value "HELLO!"
