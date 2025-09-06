@@ -20,6 +20,7 @@ None. You cannot pipe objects to Convert-EDL2Timestamp.ps1.
 String. Outputs strings that combine a timestamp and a title, separated by a space.
 
 .NOTES
+There is a improved version of this old script available as a PowerShell module, available here: https://github.com/diecknet/DavinciTimestamp
 Version:        1.0
 Author:         Andreas Dieckmann
 Creation Date:  2024-06-18
